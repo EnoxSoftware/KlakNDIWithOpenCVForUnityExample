@@ -12,9 +12,9 @@ YouTube Live --> [OBS Studio](https://obsproject.com/) + [DistroAV](https://gith
 
 ## Environment
 - Windows / macOS / Linux / Android / iOS
-- Unity >= 2022.3.54f1+
+- Unity >= 2022.3.62f1+
 - Scripting backend MONO / IL2CPP
-- [OpenCV for Unity](https://assetstore.unity.com/packages/tools/integration/opencv-for-unity-21088?aid=1011l4ehR) 2.6.5+
+- [OpenCV for Unity](https://assetstore.unity.com/packages/tools/integration/opencv-for-unity-21088?aid=1011l4ehR) 3.0.0+
 - [KlakNDI](https://github.com/keijiro/KlakNDI)
 
 

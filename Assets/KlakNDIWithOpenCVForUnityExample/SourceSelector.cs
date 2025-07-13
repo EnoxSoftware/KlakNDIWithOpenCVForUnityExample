@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace KlacNDIWithOpenCVForUnityExample
+namespace KlakNDIWithOpenCVForUnityExample
 {
 
     public class SourceSelector : MonoBehaviour

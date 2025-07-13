@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace KlacNDIWithOpenCVForUnityExample
+namespace KlakNDIWithOpenCVForUnityExample
 {
 
     public class ShowLicense : MonoBehaviour
@@ -9,7 +9,7 @@ namespace KlacNDIWithOpenCVForUnityExample
 
         public void OnBackButtonClick()
         {
-            SceneManager.LoadScene("KlacNDIWithOpenCVForUnityExample");
+            SceneManager.LoadScene("KlakNDIWithOpenCVForUnityExample");
         }
     }
 }

@@ -228,9 +228,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425214141}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1425214149}
+        m_TargetAssemblyTypeName: KlakNDIWithOpenCVForUnityExample.MultiObjectTrackingExample,
+          Assembly-CSharp
+        m_MethodName: OnShowObjectDetectorResultToggleValueChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -959,9 +960,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425214141}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1425214149}
+        m_TargetAssemblyTypeName: KlakNDIWithOpenCVForUnityExample.MultiObjectTrackingExample,
+          Assembly-CSharp
+        m_MethodName: OnEnableByteTrackToggleValueChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1261,7 +1263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425214146}
   - component: {fileID: 1425214149}
-  - component: {fileID: 1425214148}
+  - component: {fileID: 1425214151}
   - component: {fileID: 1425214150}
   m_Layer: 0
   m_Name: MultiObjectTrackingExample
@@ -1285,7 +1287,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1425214148
+--- !u!114 &1425214149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1294,22 +1296,69 @@ MonoBehaviour:
   m_GameObject: {fileID: 1425214141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e564a549956aebc4d9acef3ff91b0981, type: 3}
+  m_Script: {fileID: 11500000, guid: 4840d7c2aa9bb7240ae34ec78e836033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResultPreview: {fileID: 7720662776659329007}
+  ShowObjectDetectorResultToggle: {fileID: 30108327}
+  ShowObjectDetectorResult: 0
+  EnableByteTrackToggle: {fileID: 863751242}
+  EnableByteTrack: 1
+  OutputRenderTextureToggle: {fileID: 3422791893454121805}
+  Model: OpenCVForUnityExamples/dnn/yolox_tiny.onnx
+  Classes: OpenCVForUnityExamples/dnn/coco.names
+  ConfThreshold: 0.25
+  NmsThreshold: 0.45
+  TopK: 300
+  InpWidth: 416
+  InpHeight: 416
+--- !u!114 &1425214150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425214141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a421a75b9dc95845b452d162bfdfce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlignmentSetting: 1
+  Offset: {x: 10, y: 10}
+  BoxVisible: 1
+  BoxWidth: 200
+  BoxHeight: 200
+  Padding: {x: 10, y: 10}
+  ConsoleHeight: 100
+--- !u!114 &1425214151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425214141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6710d062e27d084c92efbd532befe37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentSource2MatHelperClassInterfaces: 104
   _requestedSource2MatHelperClassName: 4
-  _currentSource2MatHelperClassInterfaces: 40
-  _requestedDeviceName: EMEET SmartCam S600
+  _requestedDeviceName: 
   _requestedWidth: 640
   _requestedHeight: 480
   _requestedIsFrontFacing: 0
   _requestedFPS: 30
-  _requestedMatUpdateFPS: 10
-  _requestedVideoFilePath: OpenCVForUnity/768x576_mjpeg.mjpeg
+  _requestedVideoFilePath: 
   _loop: 1
   _requestedImageFilePath: 
   _repeat: 1
   _sourceTexture: {fileID: 8400000, guid: 79baea56be581b94886cdca74ca8b006, type: 2}
+  _requestedMatUpdateFPS: 30
+  _rotate90Degree: 0
+  _flipVertical: 0
+  _flipHorizontal: 0
   _customClassComponent: {fileID: 0}
   _outputColorFormat: 3
   _timeoutFrameCount: 1500
@@ -1317,7 +1366,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1425214149}
-        m_TargetAssemblyTypeName: OpenCVForUnityExample.MultiObjectTrackingExample,
+        m_TargetAssemblyTypeName: KlakNDIWithOpenCVForUnityExample.MultiObjectTrackingExample,
           Assembly-CSharp
         m_MethodName: OnSourceToMatHelperInitialized
         m_Mode: 1
@@ -1333,7 +1382,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1425214149}
-        m_TargetAssemblyTypeName: OpenCVForUnityExample.MultiObjectTrackingExample,
+        m_TargetAssemblyTypeName: KlakNDIWithOpenCVForUnityExample.MultiObjectTrackingExample,
           Assembly-CSharp
         m_MethodName: OnSourceToMatHelperDisposed
         m_Mode: 1
@@ -1349,7 +1398,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1425214149}
-        m_TargetAssemblyTypeName: OpenCVForUnityExample.MultiObjectTrackingExample,
+        m_TargetAssemblyTypeName: KlakNDIWithOpenCVForUnityExample.MultiObjectTrackingExample,
           Assembly-CSharp
         m_MethodName: OnSourceToMatHelperErrorOccurred
         m_Mode: 0
@@ -1361,51 +1410,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1425214149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425214141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4840d7c2aa9bb7240ae34ec78e836033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resultPreview: {fileID: 7720662776659329007}
-  showObjectDetectorResultToggle: {fileID: 30108327}
-  showObjectDetectorResult: 0
-  trackerByteTrackToggle: {fileID: 863751242}
-  trackerByteTrack: 1
-  model: yolox_tiny.onnx
-  config: 
-  classes: coco.names
-  confThreshold: 0.25
-  nmsThreshold: 0.45
-  topK: 1000
-  inpWidth: 416
-  inpHeight: 416
-  outputRenderTextureToggle: {fileID: 3422791893454121805}
---- !u!114 &1425214150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425214141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feca34c9c3fe83343ad2017224a49971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alignment: 1
-  offset: {x: 10, y: 10}
-  boxVisible: 1
-  boxWidth: 75
-  boxHeight: 30
-  padding: {x: 8, y: 5}
-  consoleHeight: 50
 --- !u!1 &1636206200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,7 +2614,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1425214149}
-        m_TargetAssemblyTypeName: OpenCVForUnityExample.MultiObjectTrackingExample,
+        m_TargetAssemblyTypeName: KlakNDIWithOpenCVForUnityExample.MultiObjectTrackingExample,
           Assembly-CSharp
         m_MethodName: OnOutputRenderTextureToggleValueChanged
         m_Mode: 1

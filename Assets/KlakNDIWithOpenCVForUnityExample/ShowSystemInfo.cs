@@ -1,26 +1,27 @@
-using OpenCVForUnity.CoreModule;
-using OpenCVForUnity.UnityUtils;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using OpenCVForUnity.CoreModule;
+using OpenCVForUnity.UnityIntegration;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace KlacNDIWithOpenCVForUnityExample
+namespace KlakNDIWithOpenCVForUnityExample
 {
     public class ShowSystemInfo : MonoBehaviour
     {
-        public Text systemInfoText;
-        public InputField systemInfoInputField;
-
+        // Constants
         private const string ASSET_NAME = "OpenCVForUnity";
 
-        // Use this for initialization
-        void Start()
-        {
+        // Public Fields
+        public Text SystemInfoText;
+        public InputField SystemInfoInputField;
 
+        // Unity Lifecycle Methods
+        private void Start()
+        {
             StringBuilder sb = new StringBuilder();
             sb.Append("###### Build Info ######\n");
             IDictionary<string, string> buildInfo = GetBuildInfo();
@@ -48,21 +49,21 @@ namespace KlacNDIWithOpenCVForUnityExample
             }
             sb.Append("#########################\n");
 
-            systemInfoText.text = systemInfoInputField.text = sb.ToString();
+            SystemInfoText.text = SystemInfoInputField.text = sb.ToString();
             Debug.Log(sb.ToString());
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
 
         }
 
+        // Public Methods
         public Dictionary<string, string> GetBuildInfo()
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
 
-            dict.Add(ASSET_NAME + " version", Core.NATIVE_LIBRARY_NAME + " " + Utils.getVersion() + " (" + Core.VERSION + ")");
+            dict.Add(ASSET_NAME + " version", Core.NATIVE_LIBRARY_NAME + " " + OpenCVEnv.GetVersion() + " (" + Core.VERSION + ")");
             dict.Add("Build Unity version", Application.unityVersion);
 
 #if UNITY_EDITOR
@@ -77,6 +78,8 @@ namespace KlacNDIWithOpenCVForUnityExample
             dict.Add("Build target", "Android");
 #elif UNITY_IOS
             dict.Add("Build target", "iOS");
+#elif UNITY_VISIONOS
+            dict.Add("Build target", "VisionOS");
 #elif UNITY_WSA
             dict.Add("Build target", "WSA");
 #elif UNITY_WEBGL
@@ -173,7 +176,7 @@ namespace KlacNDIWithOpenCVForUnityExample
 
         public void OnBackButtonClick()
         {
-            SceneManager.LoadScene("KlacNDIWithOpenCVForUnityExample");
+            SceneManager.LoadScene("KlakNDIWithOpenCVForUnityExample");
         }
     }
 }
