@@ -1,4 +1,4 @@
-using System.Collections;
+using OpenCVForUnity.CoreModule;
 using OpenCVForUnity.UnityIntegration;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,10 +6,17 @@ using UnityEngine.UI;
 
 namespace KlakNDIWithOpenCVForUnityExample
 {
+    /// <summary>
+    /// KlakNDI With OpenCVForUnity Example
+    /// Main menu scene. Shows the sample list and OpenCVForUnity / Unity version information.
+    /// </summary>
     public class KlakNDIWithOpenCVForUnityExample : MonoBehaviour
     {
         // Constants
-        private static float VERTICAL_NORMALIZED_POSITION = 1f;
+#if UNITY_6000_5_OR_NEWER
+        [Unity.Scripting.LifecycleManagement.NoAutoStaticsCleanup]
+#endif
+        private static float _verticalNormalizedPosition = 1f;
 
         // Public Fields
         [Header("UI")]
@@ -18,19 +25,14 @@ namespace KlakNDIWithOpenCVForUnityExample
         public ScrollRect ScrollRect;
 
         // Unity Lifecycle Methods
-        private void Awake()
-        {
-            //QualitySettings.vSyncCount = 0;
-            //Application.targetFrameRate = 60;
-        }
-
-        private IEnumerator Start()
+        private void Start()
         {
             ExampleTitle.text = "KlakNDI With OpenCVForUnity Example " + Application.version;
 
-            VersionInfo.text = OpenCVForUnity.CoreModule.Core.NATIVE_LIBRARY_NAME + " " + OpenCVEnv.GetVersion() + " (" + OpenCVForUnity.CoreModule.Core.VERSION + ")";
+            VersionInfo.text = Core.NATIVE_LIBRARY_NAME + " " + OpenCVForUnityEnv.GetVersion() + " (" + Core.VERSION + ")";
             VersionInfo.text += " / UnityEditor " + Application.unityVersion;
             VersionInfo.text += " / ";
+
 #if UNITY_EDITOR
             VersionInfo.text += "Editor";
 #elif UNITY_STANDALONE_WIN
@@ -59,15 +61,13 @@ namespace KlakNDIWithOpenCVForUnityExample
             VersionInfo.text += ".NET";
 #endif
 
-            ScrollRect.verticalNormalizedPosition = VERTICAL_NORMALIZED_POSITION;
-
-            yield break;
+            ScrollRect.verticalNormalizedPosition = _verticalNormalizedPosition;
         }
 
         // Public Methods
         public void OnScrollRectValueChanged()
         {
-            VERTICAL_NORMALIZED_POSITION = ScrollRect.verticalNormalizedPosition;
+            _verticalNormalizedPosition = ScrollRect.verticalNormalizedPosition;
         }
 
         public void OnShowSystemInfoButtonClick()
@@ -85,9 +85,9 @@ namespace KlakNDIWithOpenCVForUnityExample
             SceneManager.LoadScene("RenderTextureToMatExample");
         }
 
-        public void OnAsyncGPUReadbackHelperExampleButtonClick()
+        public void OnAsyncGPUReadbackToMatHelperExampleButtonClick()
         {
-            SceneManager.LoadScene("AsyncGPUReadback2MatHelperExample");
+            SceneManager.LoadScene("AsyncGPUReadbackToMatHelperExample");
         }
 
         public void OnComicFilterExampleButtonClick()

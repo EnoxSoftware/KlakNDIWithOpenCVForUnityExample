@@ -1011,7 +1011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AsyncGPU Readback 2 Mat Helper Example
+  m_Text: AsyncGPUReadbackToMatHelperExample
 --- !u!222 &795683522
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 863814350}
   - component: {fileID: 863814349}
   m_Layer: 5
-  m_Name: AsyncGPUReadback2MatHelperExample
+  m_Name: AsyncGPUReadbackToMatHelperExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1282,7 +1282,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1124998466}
         m_TargetAssemblyTypeName: KlacNDIWithOpenCVForUnityExample.KlacNDIWithOpenCVForUnityExample,
           Assembly-CSharp
-        m_MethodName: OnAsyncGPUReadbackHelperExampleButtonClick
+        m_MethodName: OnAsyncGPUReadbackToMatHelperExampleButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1376,7 +1376,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1124998464}
   - component: {fileID: 1124998466}
-  - component: {fileID: 1124998465}
   m_Layer: 0
   m_Name: KlacNDIWithOpenCVForUnityExample
   m_TagString: Untagged
@@ -1399,25 +1398,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1124998465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124998459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a421a75b9dc95845b452d162bfdfce7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AlignmentSetting: 1
-  Offset: {x: 10, y: 10}
-  BoxVisible: 1
-  BoxWidth: 95
-  BoxHeight: 35
-  Padding: {x: 10, y: 10}
-  ConsoleHeight: 100
 --- !u!114 &1124998466
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using OpenCVForUnity.CoreModule;
 using OpenCVForUnity.ImgprocModule;
 using OpenCVForUnity.UnityIntegration;
+using OpenCVForUnity.UnityIntegration.Helper.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -79,12 +80,12 @@ namespace KlakNDIWithOpenCVForUnityExample
         {
             if (_rgbaMat != null)
             {
-                OpenCVMatUtils.RenderTextureToMat(InputRenderTexture, _rgbaMat, _inputGraphicsBuffer);
+                OpenCVMatUnityUtils.RenderTextureToMat(InputRenderTexture, _rgbaMat, _inputGraphicsBuffer);
 
                 // Add text overlay on the frame
                 Imgproc.putText(_rgbaMat, "W:" + _rgbaMat.width() + " H:" + _rgbaMat.height() + " SO:" + Screen.orientation, (5, _rgbaMat.rows() - 10), Imgproc.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255, 255), 2, Imgproc.LINE_AA, false);
 
-                OpenCVMatUtils.MatToRenderTexture(_rgbaMat, _outputRenderTexture, _outputGraphicsBuffer);
+                OpenCVMatUnityUtils.MatToRenderTexture(_rgbaMat, _outputRenderTexture, _outputGraphicsBuffer);
             }
         }
 
